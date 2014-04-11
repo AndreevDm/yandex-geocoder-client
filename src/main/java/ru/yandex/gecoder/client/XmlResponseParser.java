@@ -30,7 +30,7 @@ public class XmlResponseParser {
         YaGeocoderHandler handler = new YaGeocoderHandler();
         try {
             parser.parse(inputStream, handler);
-        } catch (SAXException e) {
+        } catch (Exception e) {
             throw new IOException("Failed to parse geocoder result: " + e.toString(), e);
         }
         return handler.getResult();
@@ -108,10 +108,14 @@ public class XmlResponseParser {
                     geoObject.setName(getString());
                     break;
                 case "lowerCorner":
-                    geoObject.setLowerCorner(getGeoPoint());
+                    if (geoObject != null){
+                        geoObject.setLowerCorner(getGeoPoint());
+                    }
                     break;
                 case "upperCorner":
-                    geoObject.setUpperCorner(getGeoPoint());
+                    if (geoObject != null){
+                        geoObject.setUpperCorner(getGeoPoint());
+                    }
                     break;
                 case "pos":
                     geoObject.setPoint(getGeoPoint());

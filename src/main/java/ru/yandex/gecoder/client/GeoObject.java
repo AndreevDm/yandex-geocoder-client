@@ -144,4 +144,9 @@ public class GeoObject {
     public void setUpperCorner(GeoPoint upperCorner) {
         this.upperCorner = upperCorner;
     }
+
+    @Override
+    public String toString() {
+        return getAddress();
+    }
 }

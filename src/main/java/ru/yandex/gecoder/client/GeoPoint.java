@@ -53,4 +53,9 @@ public class GeoPoint {
             ", lat=" + lat +
             '}';
     }
+
+    public static GeoPoint parse(String string) {
+        String[] splits = string.split(" ");
+        return new GeoPoint(Double.parseDouble(splits[0]), Double.parseDouble(splits[1]));
+    }
 }

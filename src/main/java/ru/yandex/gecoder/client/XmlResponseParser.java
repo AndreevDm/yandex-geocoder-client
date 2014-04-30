@@ -133,8 +133,7 @@ public class XmlResponseParser {
         }
 
         private GeoPoint getGeoPoint() {
-            String[] splits = getString().split(" ");
-            return new GeoPoint(Double.parseDouble(splits[0]), Double.parseDouble(splits[1]));
+            return  GeoPoint.parse(getString());
         }
 
         @Override

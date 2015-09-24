@@ -16,7 +16,7 @@ import java.net.URLEncoder;
  */
 public class YaGeocoder {
 
-    private static final String GEOCODER_HOST = "http://geocode-maps.yandex.ru/1.x/";
+    private static final String GEOCODER_HOST = "https://geocode-maps.yandex.ru/1.x/";
     private static final int HTTP_OK = 200;
 
     private XmlResponseParser responseParser = new XmlResponseParser();
